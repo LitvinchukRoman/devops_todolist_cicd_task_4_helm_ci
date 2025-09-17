@@ -103,13 +103,13 @@ jobs:
       uses: azure/setup-helm@v3
 
     - name: Lint Helm Chart
-      run: helm lint ./helm-charts/kube2py/
+      run: helm lint ./helm-charts/todoapp/
 
     - name: Template Helm
-      run: helm template kube2py ./kube2py -f ./kube2py/values.yaml
+      run: helm template todoapp ./todoapp -f ./todoapp/values.yaml
 
     - name: Package Helm
-      run: helm package ./kube2py/
+      run: helm package ./todoapp/
 
     - name: Upload Helm package
       uses: actions/upload-artifact@v4
