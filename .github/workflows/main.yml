@@ -104,8 +104,7 @@ jobs:
 
     - name: Lint Helm Chart
       run: |
-        helm lint ../helm-charts/todoapp/
-        ls -la
+         helm lint ./todoapp/
 
     - name: Template Helm
       run: helm template todoapp ./todoapp -f ./todoapp/values.yaml
